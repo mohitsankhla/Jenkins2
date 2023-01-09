@@ -20,28 +20,15 @@ pipeline
 
         stage('Test') 
         {
-            steps 
-            {
-                echo 'Test App'
+            try{
+                stage('test'){
+                    echo 'This is stage for Test Execution'
+                    bat 'mvn clean install'
+                }
+             
+            }catch(e){
+                build_ok =false
+                echo e.toString()
             }
         }
-
-        stage('Deploy') 
-        {
-            steps 
-            {
-                echo 'Deploy App'
-            }
-        }
-    }
-
-    post
-    {
-
-    	always
-    	{
-    		emailext body: 'Summary', subject: 'Pipeline Status', to: 'selenium3bymukesh@gmail.com'
-    	}
-
-    }
 }
