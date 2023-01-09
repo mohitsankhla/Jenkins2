@@ -20,8 +20,11 @@ pipeline
 
         stage('Test') 
         {
-            echo 'This is stage for Test Execution'
-            bat 'mvn clean install'
+            steps
+            {
+                echo 'This is stage for Test Execution'
+                bat 'mvn clean install'
+            }
         }
     }
 }
