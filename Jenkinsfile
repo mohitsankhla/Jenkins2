@@ -23,7 +23,7 @@ pipeline
             steps
             {
                 echo 'This is stage for Test Execution'
-                bat 'mvn clean install'
+                bat 'mvn install'
             }
         }
     }
