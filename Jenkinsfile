@@ -9,6 +9,9 @@ pipeline
             steps 
             {
                 echo 'Build App'
+                git 'https://github.com/mohitsankhla/Jenkins2.git'
+                echo 'This is stage for building the project'
+                bat 'mvn clean
             }
         }
 
