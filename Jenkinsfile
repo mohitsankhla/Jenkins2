@@ -20,16 +20,8 @@ pipeline
 
         stage('Test') 
         {
-            try{
-                stage('test'){
-                    echo 'This is stage for Test Execution'
-                    bat 'mvn clean install'
-                }
-             
-            }catch(e){
-                build_ok =false
-                echo e.toString()
-            }
+            echo 'This is stage for Test Execution'
+            bat 'mvn clean install'
         }
     }
 }
