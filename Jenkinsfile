@@ -22,6 +22,7 @@ pipeline
         {
             steps
             {
+                git 'https://github.com/mohitsankhla/Jenkins2.git'
                 echo 'This is stage for Test Execution'
                 bat 'mvn install'
             }
