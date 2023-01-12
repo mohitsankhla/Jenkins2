@@ -16,11 +16,12 @@ pipeline
                 echo 'This is stage for building the project'
                 bat 'mvn -Dmaven.test.failure.ignore=true clean package'
             }
-        }
-        post {
-            sucess {
-                junit '**/target/surefire-reports/TEST-*.xml'
-                archiveArtifacts 'target/*.jar'
+        
+            post {
+                sucess {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
             }
         }
     }
